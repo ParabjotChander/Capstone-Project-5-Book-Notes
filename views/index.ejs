@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Book Notes</title>
+      <link rel="icon" type="image/x-icon" href="images/favicon.ico"> 
+      <link rel="stylesheet" href="styles/main.css">
+   </head>
+
+   <body>
+  
+      <div id="submission">
+         
+         <h2>Submit Book Review</h2>
+         
+         <form action="/submit" method="post">
+
+            <p>Enter the ISBN of the book you read.</p>
+
+            <input type="number" name="isbn" id="isbn">
+
+            <p>Enter your opinion of the book.</p>
+
+            <input type="text" name="review">
+            
+            <p>Enter your rating for the book (1-10).</p>
+
+            <input type="number" name ="rating" min="1" max="10" placeholder="8" class="c">
+            
+            <br> <br>
+            
+            <input type="submit" name ="submit" value="Submit" class="c">
+      
+         </form>
+   
+      </div>
+   
+      <div id="sorting">
+         
+         <p>Sort your Book Reviews by Rating or Recency!</p>
+         
+         <div class="submit_flex">
+            
+            <form action="/sortByRating" method="post">
+               <input type="submit" value="Sort By Rating">
+            </form>
+
+            <form action="/sortByRecency" method="post">
+               <input type="submit" value="Sort By Recency">
+            </form>
+         
+         </div>  
+      
+      </div>
+      
+      <h2> Book Reviews </h2>
+
+      <% if(locals.book_reviews){ %>
+
+         <% for(let book_review of book_reviews){ %>
+
+            <div id="display">   
+                  
+                  <img src="<%=book_review.api%>" alt="Image of Book">
+               
+                  <br>
+                  <br>
+               
+                  <p>Review Made <%= book_review.date %></p>
+               
+                  <p>ISBN: <%= book_review.isbn %></p>
+               
+                  <form action="/edit" method="post">
+                  
+                     <input type="hidden" name="updatedReviewId" value="<%= book_review.id %>">
+                  
+                     <p>Review</p>
+                  
+                     <input type="text" name="updatedReview" value="<%= book_review.review %>">
+                  
+                     <p>Rating</p>
+                  
+                     <input type="number" name="updatedRating" min="1" max="10" value="<%= book_review.rating %>" class="c">
+                  
+                     <br>
+                     <br>
+                  
+                     <input type="submit" value="Update" class="c">
+               
+                  </form>
+            
+                  <br>
+               
+                  <form action="/delete" method="post">
+                  
+                     <input type="hidden" name="deleteReviewId" value="<%= book_review.id %>">
+
+                     <br>
+                  
+                     <input type="submit" value="Delete" class="c">
+               
+                  </form>
+            
+            </div>
+            
+         <% } %>
+         
+      <% } %>
+
+      
+   
+   
+   </body>
+
+</html>

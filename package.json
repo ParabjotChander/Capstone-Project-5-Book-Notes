@@ -1,0 +1,20 @@
+{
+  "name": "capstone-project-5-book-notes",
+  "version": "1.0.0",
+  "description": "Website that allows users to create, read, update and delete books reviews, the user has the ability to sort his or her reviews by recency, title and rating",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Parabjot Chander",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
+  }
+}

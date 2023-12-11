@@ -1,0 +1,105 @@
+*{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2{
+  text-align: center;
+}
+
+p{
+  font-style: italic;
+  text-align: center;
+  padding: 10px;
+}
+
+img{
+  display: block;
+  margin: 0 auto;
+}
+
+textarea{
+  resize: none;
+}
+
+input[type="text"]{
+  height: 200px;
+  width: 98%;
+}
+
+input[type="submit"]{
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #1E90FF;
+  height: 25px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"].active{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+#isbn{
+  height: 30px;
+  width: 98%;
+}
+
+#submission{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid black
+}
+
+#sorting{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#display{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.submit_flex{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.c{
+  margin: 0 auto;
+  display: block;
+}
+
+@media(max-width: 508px){
+  
+  .submit_flex{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #submission, #sorting, #display{
+    width: 90%;
+  }
+
+}
