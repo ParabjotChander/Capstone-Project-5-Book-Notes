@@ -13,7 +13,7 @@ const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "postgres",
-  password: "chanderman123",
+  password: "***********",
   port: 5432,
 });
 
@@ -93,8 +93,8 @@ app.post("/delete", async (req, res) => {
 
 });
 
-
 //Sorting Book Reviews by Rating
+
 app.post("/sortByRating", async (req, res) => {
   
   const result = await db.query("SELECT * FROM books ORDER BY rating ASC;");
@@ -105,6 +105,7 @@ app.post("/sortByRating", async (req, res) => {
 });
 
 //Sorting Book Reviews by Recency
+
 app.post("/sortByRecency", async (req, res) => {
   
   const result = await db.query("SELECT * FROM books ORDER BY id DESC;");
